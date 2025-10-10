@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RegisterLogin.Views.RegisterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="RegisterPage">
+    <ScrollView>
+        <VerticalStackLayout StyleClass="Container">
+            <Grid
+                Padding="10"
+                BackgroundColor="White"
+                ColumnSpacing="10"
+                RowDefinitions="auto,*,auto"
+                RowSpacing="10" />
+
+            <!--  HEADER  -->
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Style="{StaticResource HeaderLabelStyle}"
+                Text="Welcome to Register Page"
+                VerticalOptions="Center" />
+
+            <!--  MAIN CONTENT  -->
+            <VerticalStackLayout
+                Grid.Row="1"
+                Margin="20"
+                BackgroundColor="White"
+                Spacing="15">
+
+                <!--  USERNAME  -->
+
+                <Frame
+                    Margin="10"
+                    Padding="10"
+                    BackgroundColor="White"
+                    CornerRadius="18"
+                    HasShadow="True">
+                    <Entry
+                        x:Name="EntryUserName"
+                        Placeholder="Username"
+                        StyleClass="EntryFields"
+                        TextColor="Black" />
+                </Frame>
+
+                <Label
+                    x:Name="LblErrorName"
+                    FontSize="10"
+                    Text=""
+                    TextColor="Red" />
+
+                <!--  EMAIL  -->
+                <Frame
+                    Margin="10"
+                    Padding="10"
+                    BackgroundColor="White"
+                    CornerRadius="18"
+                    HasShadow="True">
+                    <Entry
+                        x:Name="EntryUserEmail"
+                        Placeholder="Email"
+                        StyleClass="EntryFields"
+                        TextColor="Black" />
+                </Frame>
+
+                <Label
+                    x:Name="LblErrorUserEmail"
+                    FontSize="10"
+                    Text=""
+                    TextColor="Red" />
+
+                <!--  PASSWORD  -->
+
+                <Grid ColumnDefinitions="*,Auto">
+                    <Frame
+                        Margin="10"
+                        Padding="10"
+                        BackgroundColor="White"
+                        CornerRadius="18"
+                        HasShadow="True">
+                        <Entry
+                            x:Name="EntryPassword"
+                            IsPassword="True"
+                            Placeholder="Password"
+                            StyleClass="EntryFields"
+                            TextColor="Black" />
+                    </Frame>
+                    <Button
+                        x:Name="ButtonTogglePass1"
+                        Grid.Column="1"
+                        Clicked="Button_TogglePass1_Clicked"
+                        HeightRequest="50"
+                        ImageSource="hide.png"
+                        WidthRequest="50" />
+                </Grid>
+                <Grid ColumnDefinitions="*,Auto">
+                    <Frame
+                        Margin="10"
+                        Padding="10"
+                        BackgroundColor="White"
+                        CornerRadius="18"
+                        HasShadow="True">
+                        <Entry
+                            x:Name="EntryVerifyPassword"
+                            IsPassword="True"
+                            Placeholder="Verify Password"
+                            TextColor="Black" />
+                    </Frame>
+                    <Button
+                        x:Name="ButtonTogglePass2"
+                        Grid.Column="1"
+                        Clicked="Button_TogglePass2_Clicked"
+                        HeightRequest="50"
+                        ImageSource="hide.png"
+                        WidthRequest="50" />
+                </Grid>
+
+                <Label
+                    x:Name="LblErrorPassword"
+                    FontSize="10"
+                    Text=""
+                    TextColor="Red" />
+
+            </VerticalStackLayout>
+
+            <!--  FOOTER  -->
+
+            <Grid
+                x:Name="Footer"
+                Grid.Row="2"
+                RowDefinitions="*,*">
+
+                <Button
+                    Clicked="ButtonRegister_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Register"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="1"
+                    Padding="0,12,0,0"
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Have an account alredy?   " TextColor="Black" />
+                            <Span
+                                Text="Sign Ip"
+                                TextColor="Purple"
+                                TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ButtonGoToLogin_Clicked" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+    <!--<VerticalStackLayout StyleClass="Container">
+        <Grid
+            ColumnSpacing="10"
+            RowDefinitions="auto,*,auto"
+            RowSpacing="10">
+    -->
+    <!--  HEADER  -->
+    <!--
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="Red"
+                HorizontalOptions="Center"
+                Text="Welcome to Register"
+                VerticalOptions="Center" />
+    -->
+    <!--  CONTENT  -->
+    <!--
+            <ScrollView Grid.Row="1" BackgroundColor="White">
+                <VerticalStackLayout Padding="20" Spacing="15">
+    -->
+    <!--  USERNAME  -->
+    <!--
+                    <Entry
+                        x:Name="EntryUserName"
+                        Placeholder="Username"
+                        TextColor="Black" />
+                    <Label
+                        x:Name="LblErrorName"
+                        FontSize="10"
+                        Text=""
+                        TextColor="Red" />
+    -->
+    <!--  EMAIL  -->
+    <!--
+                    <Entry
+                        x:Name="EntryUserEmail"
+                        Placeholder="Email"
+                        TextColor="Black" />
+                    <Label
+                        x:Name="LblErrorUserEmail"
+                        FontSize="10"
+                        Text=""
+                        TextColor="Red" />
+    -->
+    <!--  PASSWORD  -->
+    <!--
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Entry
+                            x:Name="EntryPassword"
+                            IsPassword="True"
+                            Placeholder="Password"
+                            TextColor="Black" />
+                        <Button
+                            Grid.Column="1"
+                            Clicked="Button_TogglePassword_Clicked"
+                            Text="Show/Hide" />
+                    </Grid>
+                    <Label
+                        x:Name="LblErrorPassword"
+                        FontSize="10"
+                        Text=""
+                        TextColor="Red" />
+    -->
+    <!--  PASSWORD VERIFYCATION  -->
+    <!--
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Entry
+                            x:Name="EntryVerifyPassword"
+                            IsPassword="True"
+                            Placeholder="Verify Password"
+                            TextColor="Black" />
+                        <Button
+                            Grid.Column="1"
+                            Clicked="Button_TogglePassword_Clicked"
+                            Text="Show/Hide" />
+                    </Grid>
+                    <Label
+                        x:Name="LblErrorVerifyPassword"
+                        FontSize="10"
+                        Text=""
+                        TextColor="Red" />
+    -->
+    <!--  TEMPRORARY MES  -->
+    <!--
+                    <Label
+                        x:Name="LblMessage"
+                        FontSize="15"
+                        Text=""
+                        TextColor="Red" />
+                </VerticalStackLayout>
+            </ScrollView>
+    -->
+    <!--  FOOTER  -->
+    <!--
+            <Grid
+                x:Name="Footer"
+                Grid.Row="2"
+                BackgroundColor="Yellow"
+                ColumnDefinitions="*,*"
+                RowDefinitions="*,*">
+                <Button
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    Clicked="ButtonGoToLogin_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Go to Login"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Clicked="ButtonReset_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Reset"
+                    VerticalOptions="Center" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Clicked="ButtonRegister_Clicked"
+                    HorizontalOptions="Fill"
+                    Text="Register"
+                    VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>-->
+</ContentPage>
