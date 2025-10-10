@@ -1,4 +1,5 @@
 ﻿using RegisterLogin.Views;
+//using Windows.ApplicationModel.Activation;
 
 namespace RegisterLogin
 {
@@ -8,7 +9,7 @@ namespace RegisterLogin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new StartPage());
         }
     }
 }
