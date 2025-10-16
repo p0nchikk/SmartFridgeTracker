@@ -34,7 +34,7 @@
                 CornerRadius="18"
                 HasShadow="True">
                 <Entry
-                    x:Name="EntryUserName"
+                    Text="{Binding Username}"
                     Placeholder="Username"
                     StyleClass="EntryFields"
                     TextColor="Black" />
@@ -56,14 +56,13 @@
                     CornerRadius="18"
                     HasShadow="True">
                     <Entry
-                        x:Name="EntryPassword"
+                        Text="{Binding Password}"
                         IsPassword="True"
                         Placeholder="Password"
                         StyleClass="EntryFields"
                         TextColor="Black" />
                 </Frame>
                 <Button
-                    x:Name="ButtonTogglePass"
                     Grid.Column="1"
                     Clicked="Button_TogglePass_Clicked"
                     HeightRequest="50"

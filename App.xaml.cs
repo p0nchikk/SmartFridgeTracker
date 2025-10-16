@@ -9,7 +9,7 @@ namespace RegisterLogin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ScanItemPage());
+            MainPage = new NavigationPage(new StartPage());
         }
     }
 }
